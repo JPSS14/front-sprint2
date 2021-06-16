@@ -12,6 +12,10 @@ class ProductsController {
   }
 
   allProducts() {
+
+    let service = new ProductService();
+    let teste = service.obterProdutos();
+    console.log(teste);
     // TODO: implementar
 
     // let service = new ProdutoService();
