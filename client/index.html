@@ -136,7 +136,7 @@
         </section>
 
         <section class="main__products products">
-          <div class="products__row">
+          
             <ol class="products__list">
               <li class="products__card">
                 <div class="card">
@@ -193,8 +193,8 @@
                 </div>
               </li>
             </ol>
-          </div>
-          <div class="products__row">
+          
+          
             <ol class="products__list">
               <li class="products__card">
                 <div class="card">
@@ -245,7 +245,7 @@
                 </div>
               </li>
             </ol>
-          </div>
+          
           <div class="products__row">
             <ol class="products__list">
               <li class="products__card">
@@ -702,6 +702,17 @@
     <script src="js/app/views/ProductsView.js"></script>
     <script>
       const productsController = new ProductsController();
+    </script>
+
+    <script>
+      const produto = new Product("imagem", "Descrição do item", 15);
+      const produto2 = new Product("imagem2", "Descri", 20);
+
+      const listaProdutos = new ProductsList();
+      listaProdutos.add(produto);
+      listaProdutos.add(produto2);
+      console.log(produto);
+      console.log(listaProdutos);
     </script>
   </body>
 </html>
