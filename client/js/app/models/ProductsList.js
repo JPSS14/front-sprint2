@@ -11,6 +11,11 @@ class ProductsList {
     this._products.push(product);
   }
 
+  remove(){
+
+    this._products = [];
+  }
+
   get products(){
 
     return [].concat(this._products);

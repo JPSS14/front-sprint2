@@ -27,7 +27,7 @@ class ProxyFactory {
     });
   }
 
-  static _isFunction(func) {
+  static _ehFuncao(func) {
     return typeof func === typeof Function;
   }
 }

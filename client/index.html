@@ -37,9 +37,11 @@
           <div class="header__search">
             <img class="header__icon" src="assets/search.svg" />
             <input
+              id= "search"
               class="header__input"
               type="search"
               placeholder="O que você está procurando?"
+              onkeyup="productsController.search()"
             />
           </div>
 
@@ -135,9 +137,9 @@
           </ul>
         </section>
 
-        <section class="main__products products">
+        <section class="main__products products" id="products">
           
-            <ol class="products__list">
+            <!-- <ol class="products__list">
               <li class="products__card">
                 <div class="card">
                   <img
@@ -303,9 +305,10 @@
                 </div>
               </li>
             </ol>
-          </div>
+          </div> -->
         </section>
       </main>
+
       <footer class="footer">
         <section class="footer__contact">
           <div class="footer__container contact">
@@ -705,14 +708,14 @@
     </script>
 
     <script>
-      const produto = new Product("imagem", "Descrição do item", 15);
-      const produto2 = new Product("imagem2", "Descri", 20);
+      // const produto = new Product("imagem", "Descrição do item", 15);
+      // const produto2 = new Product("imagem2", "Descri", 20);
 
-      const listaProdutos = new ProductsList();
-      listaProdutos.add(produto);
-      listaProdutos.add(produto2);
-      console.log(produto);
-      console.log(listaProdutos);
+      // const listaProdutos = new ProductsList();
+      // listaProdutos.add(produto);
+      // listaProdutos.add(produto2);
+      // console.log(produto);
+      // console.log(listaProdutos);
     </script>
   </body>
 </html>
