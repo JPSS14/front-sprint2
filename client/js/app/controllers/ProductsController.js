@@ -3,6 +3,7 @@ class ProductsController {
     let $ = document.querySelector.bind(document);
 
     this._text = $('#search');
+    this._staticList = [];
 
     this._productsList = new Bind(
       new ProductsList(),
@@ -17,14 +18,13 @@ class ProductsController {
     );
 
     this.allProducts();
-    this.search();
   }
 
   allProducts() {
 
     let service = new ProductService();
     let teste = service.obterProdutos();
-    console.log(teste);
+    // console.log(teste);
 
     service.obterProdutos()
       .then(produtos => {
@@ -32,6 +32,7 @@ class ProductsController {
           .forEach(produto => this._productsList.add(produto));
           this._message.message = 'Produtos importados com sucesso!';
           console.log("produto", produtos);
+          this._staticList = produtos;
       })
       .catch(error => this._message = error);
 
@@ -39,8 +40,11 @@ class ProductsController {
   }
 
   search(){
-
+    let pesquisa = this._staticList.filter(objeto => objeto.descricao.includes(this._text.value) == true);
+    console.log("pesquisa",pesquisa);
     this._productsList.remove();
     console.log(this._text.value);
+    pesquisa.map(objeto => this._productsList.add(objeto));
+    this._message.message = 'Produtos pesquisados com sucesso!';
   }
 }

@@ -15,7 +15,7 @@ class ProductService {
       this._http
         .get('http://localhost:3000/produtos')
         .then(produtos => {
-          console.log("olá",produtos);
+          // console.log("olá",produtos);
           resolve(produtos.map(objeto => new Product(objeto.imagem, objeto.descricao, objeto.valor)))
         })
         .catch(erro => {
